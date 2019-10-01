@@ -1,0 +1,25 @@
+{
+  "name": "wasmer-js-playground",
+  "version": "1.0.0",
+  "description": "Playground for testing wasmer-js",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx rollup -c",
+    "serve": "npx serve . -p 8000"
+  },
+  "author": "Aaron Turner",
+  "license": "MIT",
+  "dependencies": {
+    "@wasmer/wasi": "0.1.0",
+    "@wasmer/wasm-terminal": "0.1.0",
+    "@wasmer/wasm-transformer": "0.1.0",
+    "@wasmer/wasmfs": "0.1.0"
+  },
+  "devDependencies": {
+    "rollup": "^1.22.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "serve": "^11.2.0"
+  }
+}

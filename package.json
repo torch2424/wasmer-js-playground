@@ -10,10 +10,10 @@
   "author": "Aaron Turner",
   "license": "MIT",
   "dependencies": {
-    "@wasmer/wasi": "0.1.0",
-    "@wasmer/wasm-terminal": "0.1.0",
-    "@wasmer/wasm-transformer": "0.1.0",
-    "@wasmer/wasmfs": "0.1.0"
+    "@wasmer/wasi": "file:../wasmer-js/packages/wasi",
+    "@wasmer/wasm-terminal": "file:../wasmer-js/packages/wasm-terminal",
+    "@wasmer/wasm-transformer": "file:../wasmer-js/packages/wasm-transformer",
+    "@wasmer/wasmfs": "file:../wasmer-js/packages/wasmfs"
   },
   "devDependencies": {
     "rollup": "^1.22.0",

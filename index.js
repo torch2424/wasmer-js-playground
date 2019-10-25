@@ -1,6 +1,4 @@
-
-
-  // TESTING WASI
+// TESTING WASI
 
 import WASI from '@wasmer/wasi';
 import WasmFs from '@wasmer/wasmfs';
@@ -49,7 +47,6 @@ task();
 
 // TESTING WASMFS
 
-
 const wasmFs = new WasmFs();
 
 wasmFs.fs.writeFileSync("/dev/stdout", "Quick Start!");
@@ -59,12 +56,10 @@ wasmFs.getStdOut().then(response => {
 });
 
 
-
-
-  // TESTING WASM TERMINAL AND WASM TRANSFORMER
+// TESTING WASM TERMINAL AND WASM TRANSFORMER
 
 import WasmTerminal, { fetchCommandFromWAPM } from "@wasmer/wasm-terminal";
-import wasmInit, { lowerI64Imports } from "@wasmer/wasm-transformer";
+import { lowerI64Imports } from "@wasmer/wasm-transformer";
 
 // URL for where the wasm-transformer wasm file is located. This is probably different depending on your bundler.
 const wasmTransformerWasmUrl = "./node_modules/@wasmer/wasm-transformer/wasm_transformer_bg.wasm";
@@ -86,8 +81,7 @@ const fetchCommandHandler = async (commandName) => {
   // Initialize the Wasm Transformer, and use it to lower
   // i64 imports from Wasi Modules, so that most Wasi modules
   // Can run in a Javascript context.
-  await wasmInit(wasmTransformerWasmUrl);
-  return lowerI64Imports(wasmBinary);
+  return await lowerI64Imports(wasmBinary);
 };
 
 // Let's create our Wasm Terminal
@@ -109,3 +103,4 @@ wasmTerminal.focus();
 
 // Later, when we are done with the terminal, let's destroy it
 // wasmTerminal.destroy();
+
